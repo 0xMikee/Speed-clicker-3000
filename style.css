@@ -33,17 +33,6 @@ p {
 
 }
 
-.start:active {
-	transform: scale(0.98);
-}
-
-.change-btn:focus {
-	outline: none;
-}
-
-.color-text {
-	font-size: 14px;
-}
 #clickarea {
 	width: 400px;
 	height : 200px;
