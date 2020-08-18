@@ -23,49 +23,46 @@
 	    var colorString = `rgb(${col1}, ${col2}, ${col3})`;
 	    body.style.background = colorString;
     }   
-
     function getRandomRGB() {
 	    return Math.floor(Math.random() * 256);
     }
-
-    
 		// definujeme dvě functions pro zobrazování a skrývání HTML elementů
         var show = function(elem) {
-          elem.style.display = 'inline';
+        	elem.style.display = 'inline';
         };
     
         var hide = function(elem) {
-          elem.style.display = 'none';
+          	elem.style.display = 'none';
         };
     
-        // metoda kdy hra začíná
-        function startGame() {
-          hide(startBtn);
-          score = -1;
-          ended = false;
-          // startovní čas
-          startTime = new Date().getTime();
-    
-          // časovač s setMetodou.
-          var timerId = setInterval(function() {
-            var total = (new Date().getTime() - startTime) / 1000;
+    // metoda kdy hra začíná
+    function startGame() {
+        hide(startBtn);
+        score = -1;
+        ended = false;
+        // startovní čas
+        startTime = new Date().getTime();
+        // časovač s setMetodou.
+        var timerId = setInterval(function() {
+        var total = (new Date().getTime() - startTime) / 1000;
     
             // když je total menší než čas, updateujeme čas a score za sekundu
-            if (total < duration) {
-              timerTxt.textContent = total.toFixed(3);
-              clicksTxt.textContent = (score / total).toFixed(2);
-            } else {
-              // konec hry = vyresetování hodnot
-              ended = true;
-              clearInterval(timerId);
-              // voláme konec hry
-              endGame();
+    if (total < duration) {
+        timerTxt.textContent = total.toFixed(3);
+        clicksTxt.textContent = (score / total).toFixed(2);
+	}
+		else {
+            // konec hry = vyresetování hodnot
+            ended = true;
+            clearInterval(timerId);
+            // voláme konec hry
+            endGame();
             }
           }, 1);
-      }
+    }
     
-      // metoda konec hry
-      function endGame() {
+    // metoda konec hry
+    function endGame() {
         // výpis výsledku 
         var clicsBySeconds = (score / duration).toFixed(2);
         timerTxt.textContent = duration.toFixed(3);
