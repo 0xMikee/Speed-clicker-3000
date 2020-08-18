@@ -4,3 +4,4 @@
  timer
  score
  clicks per seconds
+![](speedclicker3000.png)
